@@ -1,0 +1,84 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.team {
+  background-color: v.$light-gray;
+
+  .tittle-container {
+    @include m.tittle-container(v.$black);
+    margin-bottom: 5rem;
+  }
+  .tittle {
+    @include m.tittle(v.$black);
+  }
+
+  .team-grid {
+    @include m.tablet {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .team-member {
+      margin-bottom: 4rem;
+      text-align: center;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .member-photo {
+    background-color: v.$white;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 2px solid v.$primary;
+    height: 24rem;
+    width: 24rem;
+    text-align: center;
+
+    @include m.tablet {
+      height: 14rem;
+      width: 14rem;
+    }
+    @include m.desktop {
+      height: 24rem;
+      width: 24rem;
+    }
+  }
+  .member-name {
+    font-family: v.$font-secondary;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.5;
+  }
+  .member-position {
+    font-size: 1.2rem;
+    margin: 0;
+    color: lighten($color: v.$black, $amount: 40%);
+  }
+  .member-info {
+    color: lighten($color: v.$black, $amount: 40%);
+    margin: 1rem auto 0 auto;
+    width: 90%;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+  .team-member {
+    .social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      align-items: center;
+      margin-top: 1rem;
+
+      img {
+        width: 2rem;
+        height: 2rem;
+        object-fit: contain;
+      }
+    }
+  }
+}

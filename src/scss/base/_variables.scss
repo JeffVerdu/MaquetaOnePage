@@ -1,0 +1,17 @@
+//Colores
+$primary: #fc5b5b;
+$secondary: darken($primary, 3%);
+$light-gray: #e7e7e7;
+$light-primary: lighten($primary, 10%);
+$black: #000;
+$white: #ffffff;
+
+//Fuentes
+$font-family: "Roboto", sans-serif;
+$font-secondary: "Dosis", sans-serif;
+
+//Tamaños
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1024px;
+$large-desktop: 2048px;

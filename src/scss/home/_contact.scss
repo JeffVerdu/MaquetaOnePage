@@ -1,0 +1,101 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.contact {
+  background-color: v.$secondary;
+  color: v.$white;
+
+  .tittle-container {
+    @include m.tittle-container(v.$white);
+    margin-bottom: 5rem;
+  }
+  .tittle {
+    @include m.tittle(v.$white);
+  }
+
+  .contact-grid {
+    @include m.desktop {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 2rem;
+    }
+  }
+
+  .contact-form {
+    margin-bottom: 3rem;
+
+    @include m.desktop {
+      margin-bottom: 0;
+    }
+
+    .field {
+      display: block;
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      font-size: 1.4rem;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+    .btn-submit {
+      background-color: transparent;
+      color: v.$white;
+      text-transform: uppercase;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+  }
+
+  .contact-content {
+    h3 {
+      font-weight: 400;
+    }
+    .contact-info {
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+    .address {
+      position: relative;
+      padding-left: 2rem;
+      font-size: 1.2rem;
+      &::before {
+        content: "";
+        display: block;
+        width: 1.8rem;
+        height: 1.8rem;
+        background-image: url("/geo.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        position: absolute;
+        left: 0;
+        top: -20%;
+        filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(6deg)
+          brightness(115%) contrast(106%);
+      }
+    }
+    .phone {
+      position: relative;
+      padding-left: 2rem;
+      font-size: 1.2rem;
+      &::before {
+        content: "";
+        display: block;
+        width: 1.8rem;
+        height: 1.8rem;
+        background-image: url("/phone.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        position: absolute;
+        left: 0;
+        top: -20%;
+        filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(6deg)
+          brightness(115%) contrast(106%);
+      }
+    }
+  }
+}
