@@ -212,7 +212,7 @@ function Home() {
 
         <div className="contact-grid container">
           <div className="element">
-            <form action="submit" className="contact-form">
+            <form className="contact-form">
               <input
                 className="field"
                 type="text"
